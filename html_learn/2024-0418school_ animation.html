@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動畫</title>
+    <style>
+        .div1 {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            background-color: gray;
+            /* 
+            animation: name duration timing-function delay iteration-count direction fill-mode;
+            name 動畫名稱
+            duration 動畫長度
+            timing-function linear ease ....
+            delay 延遲
+            iteration-count 播放次數 數字或infinite不斷撥放
+            direction 方向 normal、reverse(倒帶) alternate(播過去播回來)、alternate-reverse(播回來播過去)
+            fill-mode 動畫結束後停在哪裡 none(回到原始狀態) forwards(停在最後一幀)、backwards(停在開始)、both(依照次數和方向自動判斷)
+             */
+            animation: move 5s linear 0s infinite alternate;
+        }
+
+        @keyframes move {
+
+            /* 0%也可以寫from  */
+            0% {
+                left: 0;
+            }
+
+            25% {}
+
+            50% {}
+
+            /* 100%也可寫成to */
+            100% {
+                left: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1"></div>
+</body>
+
+</html>

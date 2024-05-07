@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>點餐表單</title>
+    <style>
+        form {
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>歡迎光臨 XX 餐廳</h1>
+    <h2>請填寫以下表單點餐</h2>
+
+    <form action="../php/2024-0410form.php" method="post">
+        <fieldset>
+            <legend>主食</legend>
+            <input type="checkbox" id="fried_chicken_burger" name="main_course[]" value="炸雞漢堡 - $80">
+            <label for="fried_chicken_burger">炸雞漢堡 - $80</label><br>
+
+            <input type="checkbox" id="beef_noodle_soup" name="main_course[]" value="招牌牛肉麵 - $100">
+            <label for="beef_noodle_soup">招牌牛肉麵 - $100</label><br>
+
+            <input type="checkbox" id="vegetable_stir_fried_noodles" name="main_course[]" value="蔬菜炒麵 - $70">
+            <label for="vegetable_stir_fried_noodles">蔬菜炒麵 - $70</label><br>
+
+            <input type="checkbox" id="pan_seared_steak" name="main_course[]" value="香煎牛排 - $120">
+            <label for="pan_seared_steak">香煎牛排 - $120</label><br>
+
+            <input type="checkbox" id="seafood_fried_rice" name="main_course[]" value="海鮮炒飯 - $90">
+            <label for="seafood_fried_rice">海鮮炒飯 - $90</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>甜點</legend>
+            <input type="checkbox" id="chocolate_cake" name="dessert[]" value="巧克力蛋糕 - $50">
+            <label for="chocolate_cake">巧克力蛋糕 - $50</label><br>
+
+            <input type="checkbox" id="strawberry_cheesecake" name="dessert[]" value="草莓奶酪 - $60">
+            <label for="strawberry_cheesecake">草莓奶酪 - $60</label><br>
+
+            <input type="checkbox" id="tiramisu" name="dessert[]" value="提拉米蘇 - $45">
+            <label for="tiramisu">提拉米蘇 - $45</label><br>
+
+            <input type="checkbox" id="blueberry_cream_cake" name="dessert[]" value="藍莓鮮奶油蛋糕 - $55">
+            <label for="blueberry_cream_cake">藍莓鮮奶油蛋糕 - $55</label><br>
+
+            <input type="checkbox" id="mango_smoothie" name="dessert[]" value="芒果冰沙 - $40">
+            <label for="mango_smoothie">芒果冰沙 - $40</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>飲料</legend>
+            <input type="checkbox" id="fresh_juice" name="drink[]" value="鮮榨果汁 - $30">
+            <label for="fresh_juice">鮮榨果汁 - $30</label><br>
+
+            <input type="checkbox" id="lemon_iced_tea" name="drink[]" value="檸檬冰茶 - $25">
+            <label for="lemon_iced_tea">檸檬冰茶 - $25</label><br>
+
+            <input type="checkbox" id="signature_coffee" name="drink[]" value="招牌咖啡 - $35">
+            <label for="signature_coffee">招牌咖啡 - $35</label><br>
+
+            <input type="checkbox" id="milk_tea" name="drink[]" value="奶茶 - $20">
+            <label for="milk_tea">奶茶 - $20</label><br>
+
+            <input type="checkbox" id="ice_cream_milkshake" name="drink[]" value="冰淇淋奶昔 - $40">
+            <label for="ice_cream_milkshake">冰淇淋奶昔 - $40</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>套餐</legend>
+            <input type="radio" id="single_set" name="set_menu" value="單人套餐 - $150">
+            <label for="single_set">單人套餐 - $150</label><br>
+
+            <input type="radio" id="couple_set" name="set_menu" value="情侶套餐 - $280">
+            <label for="couple_set">情侶套餐 - $280</label><br>
+
+            <input type="radio" id="family_set" name="set_menu" value="家庭套餐 - $400">
+            <label for="family_set">家庭套餐 - $400</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>附加需求</legend>
+            <label for="additional_requirements">特殊需求：</label><br>
+            <textarea id="additional_requirements" name="additional_requirements" rows="4" cols="50"></textarea><br><br>
+        </fieldset>
+
+        <input type="submit" value="提交訂單">
+    </form>
+
+    <div>
+        <a href="./2024-0410home_index.html">回首頁</a>
+    </div>
+</body>
+
+</html>

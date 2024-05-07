@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>線性漸層</title>
+    <style>
+        #div1 {
+            width: 300px;
+            height: 300px;
+            /* 線性漸層 */
+            /* linear-gradient(顏色1,顏色2......); */
+            background-image: linear-gradient(red, orange, lightblue, yellow);
+        }
+
+        #div2 {
+            width: 300px;
+            height: 300px;
+            /* 線性漸層 */
+            /* linear-gradient(方向, 顏色1,顏色2......); */
+            /* "方向參數 預設上到下 deg角度 or to方向 
+            to top = 0deg/360deg  
+            to right = 90deg  
+            to bottom = 180deg 
+            to left = 270deg" */
+            background-image: linear-gradient(to top, red, orange, lightblue, yellow);
+        }
+
+        #div3 {
+            width: 300px;
+            height: 300px;
+            /* 線性漸層 */
+            /* linear-gradient(顏色1,顏色2......); 顏色後面+上%數可以調整比例*/
+            background-image: linear-gradient(red 10%, orange 20%, lightblue 30%, yellow);
+        }
+
+        #div4 {
+            width: 300px;
+            height: 300px;
+            /* 線性漸層 */
+            /* linear-gradient(顏色1,顏色2......); */
+            background-image: linear-gradient(red, orange, lightblue, yellow);
+        }
+
+        #div5 {
+            width: 300px;
+            height: 300px;
+
+            background-image: repeating-linear-gradient(90deg, red, orange 10%, lightblue 10%, yellow);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <hr>
+    <div id="div2"></div>
+    <hr>
+    <div id="div3"></div>
+    <hr>
+    <div id="div4"></div>
+    <hr>
+    <div id="div5"></div>
+</body>
+
+</html>

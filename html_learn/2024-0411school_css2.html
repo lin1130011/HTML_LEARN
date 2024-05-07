@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: red;
+            width: 300px;
+            height: 300px;
+        }
+
+        .box:hover {
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        tr,
+        td,
+        th {
+            border: 1px solid black;
+        }
+
+        .price {
+            text-align: left;
+        }
+
+        .price::before {
+            content: "$";
+        }
+
+        .price::after {
+            content: "★";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+    </div>
+
+    <table>
+        <tr>
+            <th width="15%">
+                ID
+            </th>
+
+            <th width="15%">
+                NAME
+            </th>
+            <th>
+                PRICE
+            </th>
+        </tr>
+        <tr>
+            <td>
+                1
+            </td>
+
+            <td>
+                咖啡
+            </td>
+
+            <td class="price">
+                100
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

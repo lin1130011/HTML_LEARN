@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wokongtest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            /* height: 9000px; */
+            font-family: 'Cedarville Cursive', cursive;
+            /* background-color: darkgray; */
+            /* background-color: black; */
+            background-image: url(./images/wokongeyes.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+        }
+
+        .log {
+            position: fixed;
+            right: 2px;
+            bottom: 2px;
+            /* background-image: url(./images/cutemonkey.jpg); */
+        }
+
+
+
+        .title {
+            clear: both;
+            width: 100%;
+            height: 40px;
+            background-color: black;
+            position: sticky;
+            top: 0;
+            text-align: center;
+        }
+
+        .introduce {
+            padding-top: 1px;
+            float: left;
+            font-size: 20px;
+            width: 33%;
+        }
+
+        .introduce a:link,
+        .introduce a:visited {
+            color: white;
+            /* 定義超連結的顏色 */
+            text-decoration: none;
+            /* 移除下劃線 */
+        }
+
+        .introduce a:hover {
+            color: red;
+            font-size: 23px;
+            /* 定義滑鼠懸停時的顏色 */
+        }
+
+        .row {
+
+            clear: both;
+            margin-top: 10px;
+        }
+
+        .banner {
+            margin-top: 5px;
+            background-image: url("./images/wokong.jpg");
+            width: 100%;
+            height: 700px;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        .banner-text {
+            padding: 10px;
+            text-align: left;
+            color: darkgray;
+
+        }
+
+        .banner-text h1 {
+            font-family: 'Cedarville Cursive', cursive;
+            font-size: 48px;
+            padding: 10px;
+        }
+
+        .pass-img {
+            margin-top: 300px;
+            margin-bottom: 300px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .pass-img img {
+
+            width: 80%;
+            height: 500px;
+        }
+
+        .any-row {
+            margin-top: 700px;
+
+        }
+
+        .story-row,
+        .wapen-row,
+        .skill-row {
+            padding-top: 60px;
+            /* 标题栏高度的额外间距 */
+        }
+
+        .story-title,
+        .wapen-title,
+        .skill-title {
+            width: 80%;
+            text-align: center;
+            margin: auto;
+            background-color: black;
+            color: red;
+        }
+
+        .story,
+        .wapen,
+        .skill {
+            margin: auto;
+            width: 80%;
+
+        }
+
+        .story-img,
+        .wapen-img {
+            float: left;
+            width: 50%;
+            margin-left: 50px;
+        }
+
+        .skill-img {
+            float: left;
+            width: 40%;
+        }
+
+
+
+        .story-content,
+        .wapen-content,
+        .skill-content {
+            margin-right: 250px;
+            float: right;
+            width: 30%;
+            background-color: black;
+            color: darkgray;
+            font-size: 21px;
+        }
+
+        .skill-img,
+        .skill-content {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="log">
+        <a href="#top"> <img src="./images/wokongeyes.png" alt="" style="width: 150px; height: 150px;"></a>
+    </div>
+    <div class="title">
+        <div class="introduce"><a href="#story">故事介紹</a> </div>
+        <div class="introduce"><a href="#wapen">武器介紹</a> </div>
+        <div class="introduce"><a href="#skill">技能介紹</a> </div>
+    </div>
+
+    <div class="banner" id="top">
+        <div class="banner-text">
+            <div class="banner-text-1">
+                <h1>鴻蒙初辟本無性</h1>
+                <h1>&nbsp;&nbsp;&nbsp;&nbsp;打破頑冥須</h1>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="story-row" id="story">
+        <div class="story-title">
+            <h2>故事介紹</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="story">
+            <div class="story-img">
+                <img src="./images/wokongstory.jpg" alt="">
+            </div>
+            <div class="story-content">
+                當唐僧師徒一行取經成功後，孫悟空雖然被封斗戰勝佛，卻漸漸銷聲匿跡。
+                不知過了多少年，玩家扮演的小猴子聽聞這一傳說後心生向往，便下定決心追尋孫悟空西天取經的足跡。
+                在這段冒險旅程中，他面對了巨龍、妖魔和天兵的考驗，更深入瞭解了自己和世界。
+                這段歷程不僅是一場冒險，更是一場心靈的洗禮，最終，他成功實現了自我成長與超越，成為了一位更加智慧和勇敢的猴子。
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="any-row"></div>
+
+    <div class="wapen-row" id="wapen">
+        <div class="wapen-title">
+            <h2>武器介紹</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="wapen">
+            <div class="wapen-img">
+                <img src="./images/wokongwapen.jpg" alt="" style="width: 640px; height: 360px;">
+            </div>
+            <div class="wapen-content">
+                如意金箍棒，又稱「如意棒」或「金箍棒」，是孫悟空的神兵法寶。
+                這根法寶可以任意變長變短，重量隨心所欲地調整，展現出無盡的力量。
+                在孫悟空西天取經的艱辛旅程中，如意金箍棒成為了他的得力助手，幫助他克服了重重困難和挑戰。
+                這根法寶象徵著力量和智慧的結合，是他冒險歷程中不可或缺的一部分。如意金箍棒承載了孫悟空的希望和勇氣，為他帶來了無數的勝利與冒險的榮耀。
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="any-row"></div>
+
+    <div class="skill-row" id="skill">
+        <div class="skill-title">
+            <h2>技能介紹</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="skill">
+            <div class="skill-img">
+                <img src="./images/wokongskill1.jpg" alt="" style="width: 640px; height: 360px;">
+            </div>
+            <div class="skill-content">
+                法天象地: 法天象地是古代思想家在著作中的一句常見語.
+                同時，法天象地也是《西遊記》中的神通名稱，施展此神通會讓施法者化身成天地，效仿天地的規模，效仿天，模仿地，跟天一樣高大，地一樣寬廣，是能與天地同高的技能，屬於大神通。甚至調整自然景象，以此來迷惑敵人或保護同伴。這項技能不僅具有強大的攻擊性，還擁有廣泛的應用範圍，可以在各種情況下發揮重要作用。
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="skill">
+            <div class="skill-img">
+                <img src="./images/wokongskill2.jpg" alt="" style="width: 640px; height: 360px;">
+            </div>
+            <div class="skill-content">
+                分身術：分身術是孫悟空的神通之一，能夠分化出多個身影，與敵人進行分散戰鬥或迷惑對手。這種技能使他能在戰場上快速穿梭，出其不意地進行攻擊或逃脫困境。悟空可以將自己分成多個身影，每個身影都具有獨立的意識和行動能力，使得敵人難以辨識真偽。這讓他能夠在戰鬥中佔據優勢，創造出各種意想不到的戰術，是他關鍵的戰鬥技能之一。分身術還可以用於偵查和情報收集
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="skill">
+            <div class="skill-img">
+                <img src="./images/wokongskill3.jpg" alt="" style="width: 640px; height: 360px;">
+            </div>
+            <div class="skill-content">
+                火眼金睛：火眼金睛是孫悟空的特殊能力，通過此法術，他能夠透過火焰和煙霧看到事物的真實形態，甚至窺見幽微的能量變化。這使他能夠識破偽裝、看穿幻象，並在混亂的戰場中保持警惕，掌握先機。悟空的眼睛能夠穿透迷霧和煙霧，看到背後的真相，這使他成為戰場上的智慧領袖和優秀的戰術家。火眼金睛不僅讓悟空能夠在戰鬥中獲得優勢，還使他能夠在冒險旅程中避免危險，保護自己和同伴的安全。
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
