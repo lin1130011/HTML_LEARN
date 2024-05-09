@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+}
+
+.box {
+    /* width: 1000px; */
+    margin: auto;
+    background-image: url(../images/0101.jpg);
+    height: 5000px;
+}
+
+.title {
+    font-family: 標楷體;
+    font-size: 18px;
+    text-align: center;
+    color: #FF0000;
+}
+
+table {
+    margin-top: 10px;
+    width: 100%;
+    font-size: 16px;
+    font-family: 標楷體, Arial, sans-serif;
+}
+
+.item1 {
+    text-align: center;
+    color: #FF0000;
+}
+
+/* .item1 a {
+    display: block;
+    padding: 10px;
+} */
+
+.item2 {
+    font-size: 16px;
+    font-family: 標楷體;
+    color: #FF0000;
+    text-align: center;
+}
+
+.table2 {
+    width: 100%;
+}
+
+.item3 {
+    color: #800000;
+}
+
+.item4 {
+    color: #0000FF;
+}
+
+.item5 {
+    color: #FF0000;
+}
+
+.item6 {
+    color: #00FF00;
+}
+
+.item7 {
+    color: #000000;
+}
+
+.target {
+    text-align: left;
+}

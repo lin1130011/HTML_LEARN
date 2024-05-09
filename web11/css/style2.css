@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.box {
+    /* width: 1000px; */
+    margin: auto;
+    background-image: url(../images/0101.jpg);
+
+}
+
+
+
+.title {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+}
+
+.title>.item1 {
+    font-size: 18px;
+    font-family: 標楷體;
+}
+
+.item1 {
+    text-align: center;
+    color: #FF0000;
+}
+
+.item1 a {
+    display: block;
+    padding: 10px;
+}
+
+.item2 {
+    font-size: 16px;
+    font-family: 標楷體;
+    color: #FF0000;
+    text-align: left;
+}
