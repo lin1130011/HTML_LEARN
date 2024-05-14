@@ -1,9 +1,22 @@
+<<<<<<< HEAD
 .main {
     width: 100%;
     border: 1px solid black;
     border-bottom: 0px;
 }
 
+=======
+* {
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+
+.box {
+    /* width: 1000px; */
+    margin: auto;
+
+}
+>>>>>>> eaf5b7140f654d50cf0a91044eef141f008c2b1e
 
 
 .main-footer {
@@ -49,11 +62,4 @@
 
 .btn:hover {
     background-color: black;
-}
-
-.footer {
-    width: 100%;
-    height: 20px;
-    border: 1px solid black;
-    text-align: center;
 }
