@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My title</title>
+    <style>
+        .my-style {
+            color: lightblue;
+            background-color: lightcoral;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>
+        A heading
+    </h1>
+    <a href="" id="myA">
+        Link text
+    </a>
+    <p class="myP" id="aaa">
+        Lorem ipsum dolor sit amet.
+    </p>
+    <button class="test">666</button>
+    <script>
+        $(document).ready(function () {
+
+            // $('.myP').attr('class', 'my-style');
+
+
+            $('h1').css('color', 'blue');
+            $('#myA').css('color', 'red');
+            $('.myP').css('color', 'green');
+
+
+            $('h1').css('font-size', '16px');
+            $('#myA').css('font-size', '18px');
+            $('.myP').css('font-size', '20px');
+
+
+            $('h1').css('background-color', 'gray');
+            $('#myA').css('background-color', 'gray');
+            $('.myP').css('background-color', 'gray');
+
+            $(".test").click(function () {
+                $('.myP').hide();
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
