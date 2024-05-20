@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="size">
+        <p class="content"></p>
+    </div>
+    <div class="img">
+        <img src="" alt="" class="myig">
+    </div>
+    <button class="mybtn" data-text="BLACK" data-color="red" data-bg="black" data-img="cake.jpg">123</button>
+    <button class="mybtn" data-text="BLUE" data-color="yellow" data-bg="blue" data-img="cake2.jpg">456</button>
+    <button class="mybtn" data-text="RED" data-color="lightblue" data-bg="red" data-img="cake3.jpg">789</button>
+    <script>
+        $(document).ready(function () {
+            const baa = $('.mybtn');
+            const show = $(".content");
+            baa.click(function () {
+                let nowbtn = $(this);
+                let bg = nowbtn.attr("data-bg");
+                let text = nowbtn.attr("data-text");
+                let color = nowbtn.attr("data-color");
+                let getimg = nowbtn.attr('data-img');
+                let myig = $(".myig");
+                let imgurl = `./images/${getimg}`
+                show.text(text);
+                show.css({
+                    "background-color": bg,
+                    "color": color
+                })
+                myig.attr('src', imgurl);
+            })
+            // $("#black").click(function () {
+            //     let getDataColor = $("#black").attr('data-color')
+            //     $(".size").css({
+            //         "background-color": "black",
+            //         "width": "300px",
+            //         "height": "300px",
+            //         "display": "flex",
+            //         "justify-content": "center",
+            //         "align-items": "center"
+            //     });
+            //     $(".content").text("bgcolor is black").css({
+            //         'color': getDataColor,
+            //         "font-size": "32px"
+            //     })
+            // })
+            // $("#blue").click(function () {
+            //     $(".size").css({
+            //         "background-color": "blue",
+            //         "width": "300px",
+            //         "height": "300px",
+            //         "display": "flex",
+            //         "justify-content": "center",
+            //         "align-items": "center"
+            //     });
+            //     $(".content").text("bgcolor is blue").css({
+            //         "color": "red",
+            //         "font-size": "32px"
+            //     })
+            // })
+            // $("#red").click(function () {
+            //     $(".size").css({
+            //         "background-color": "red",
+            //         "width": "300px",
+            //         "height": "300px",
+            //         "display": "flex",
+            //         "justify-content": "center",
+            //         "align-items": "center"
+            //     });
+            //     $(".content").text("bgcolor is red").css({
+            //         "color": "yellow",
+            //         "font-size": "32px",
+            //     })
+            // })
+        })
+    </script>
+
+</body>
+
+</html>

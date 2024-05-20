@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            border-collapse: collapse;
+        }
+
+        .box {
+            width: 80%;
+            margin: auto;
+        }
+
+        .title {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .head {
+            width: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item1,
+        .item2,
+        .item3,
+        .item4 {
+            width: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .button-box {
+            display: flex;
+            justify-content: end;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="title">
+            <div class="head">id</div>
+            <div class="head">name</div>
+            <div class="head">pic</div>
+            <div class="head">price</div>
+        </div>
+        <div class="content">
+            <div class="item1"></div>
+            <div class="item2"></div>
+            <img src="" alt="" class="item3">
+            <div class="item4"></div>
+        </div>
+        <div class="button-box">
+            <button class="button" data-item1="1" data-item2="珍奶" data-item3="../images/milktea.jpg"
+                data-item4="100">奶茶</button>
+            <button class="button" data-item1="2" data-item2="花茶" data-item3="../images/flower.jpg"
+                data-item4="200">花茶</button>
+        </div>
+    </div>
+    <script>
+        const item1 = $(".item1");
+        const item2 = $(".item2");
+        const item3 = $(".item3");
+        const item4 = $(".item4");
+        const button = $(".button");
+        button.click(function () {
+            $nowbutton = $(this);
+            let id = $nowbutton.attr('data-item1');
+            let name = $nowbutton.attr('data-item2');
+            let pic = $nowbutton.attr('data-item3');
+            let price = $nowbutton.attr('data-item4');
+            item1.text(id);
+            item2.text(name);
+            item3.attr('src', pic);
+            item4.text(price);
+        })
+
+
+    </script>
+    <!-- <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>pic</th>
+            <th>ptice</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>珍奶</td>
+            <td><img src="" alt=""></td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>花茶</td>
+            <td><img src="" alt=""></td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table> -->
+</body>
+
+</html>
