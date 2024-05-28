@@ -82,7 +82,7 @@ $data = [
                 </td>
                 <td>
                     <?php
-                    $tmpUrl = "./images/{$value['pic']}";
+                    $tmpUrl = "../images/{$value['pic']}";
                     ?>
                     <img src="<?= $tmpUrl; ?>" alt="" srcset="">
                 </td>
