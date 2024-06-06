@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .card {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3 class="text-primary text-center t1">chocolate cake</h3>
+                <div class="card cd1 ">
+                    <img class="card-img-top" src="../images/cake.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">巧克力蛋糕</h4>
+                        <p class="card-text">
+                            巧克力蛋糕是一種廣受歡迎的甜點，以其濃郁的巧克力風味和濕潤的口感著稱。這款蛋糕通常由高品質的可可粉或融化的巧克力製成，配以黃油、糖、雞蛋和麵粉等基本食材。有時會加入巧克力碎片或堅果增添口感。巧克力蛋糕可以搭配各種糖霜，如奶油、巧克力甘納許或奶酪糖霜增加其美味。它適合在生日、節日或任何慶祝場合享用。
+                        </p>
+                        <a href="https://buy.sanwant.com.tw/product/%E9%A0%82%E7%B4%9A%E7%94%9F%E5%B7%A7%E5%85%8B%E5%8A%9B/"
+                            class="btn btn-primary">前往主題店</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h3 class="text-primary text-center t2">honey cake</h3>
+                <div class="card cd2">
+                    <img class="card-img-top" src="../images/cake2.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">蜂蜜蛋糕</h4>
+                        <p class="card-text">
+                            蜂蜜蛋糕是一種以蜂蜜為主要甜味來源的傳統蛋糕。蜂蜜不僅帶來自然的甜味，還賦予蛋糕一種獨特的芳香和濕潤的質地。這款蛋糕通常製作簡單，只需少量的食材，如麵粉、雞蛋、黃油和蜂蜜。蜂蜜蛋糕可以單獨享用，或搭配一些水果、堅果或奶油來增添風味。它不僅適合作為日常甜點，也非常適合在家庭聚會和節日慶典上分享。
+                        </p>
+                        <a href="https://www.king.com.tw/products/castella-honey" class="btn btn-primary">前往主題店</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h3 class="text-primary text-center t3">Strawberry Cake</h3>
+                <div class="card cd3">
+                    <img class="card-img-top" src="../images/cake4.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">草莓蛋糕</h4>
+                        <p class="card-text">
+                            草莓蛋糕是一款清爽而甜美的蛋糕，以新鮮的草莓為主要特色。這款蛋糕通常由輕盈的海綿蛋糕層疊而成，每層間都夾有鮮奶油和切片草莓，頂部再用更多的草莓和奶油裝飾。草莓蛋糕的口感柔軟，甜而不膩，草莓的酸甜味與奶油的順滑完美結合，是夏日的絕佳甜點選擇。無論是在生日、慶祝活動還是下午茶時間，草莓蛋糕都是一道令人愉悅的甜品。
+                        </p>
+                        <a href="https://www.tartine.com.tw/categories/strawberryseason"
+                            class="btn btn-primary">前往主題店</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            let t1 = $('.t1');
+            let t2 = $('.t2');
+            let t3 = $('.t3');
+            let cd1 = $('.cd1');
+            let cd2 = $('.cd2');
+            let cd3 = $('.cd3');
+
+            t1.hover(
+                function () {
+                    cd1.fadeIn(500)
+                    cd2.fadeOut(500)
+                    cd3.fadeOut(500)
+                },
+
+
+            );
+
+            t2.hover(
+                function () {
+                    cd2.fadeIn(500)
+                    cd1.fadeOut(500)
+                    cd3.fadeOut(500)
+                }
+            );
+
+            t3.hover(
+                function () {
+                    cd3.fadeIn(500)
+                    cd1.fadeOut(500)
+                    cd2.fadeOut(500)
+                }
+            );
+        });
+    </script>
+</body>
+
+</html>
