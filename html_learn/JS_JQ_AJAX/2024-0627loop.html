@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .kwd {
+            color: red;
+        }
+
+        .kwd2 {
+            color: blue;
+        }
+
+        .kwd3 {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h1 class="text-center">demo</h1>
+    <div class="container-fluid text-center mt-5 mb-5" id="demo">
+    </div>
+
+    <h1 class="text-center">dd</h1>
+    <table class="w-100 text-center mt-5 mb-5" id="dd">
+    </table>
+
+
+    <h1 class="text-center">showarr</h1>
+    <div id="arr"></div>
+
+
+    <script>
+
+        let text = '';
+        for (let a = 1; a <= 9; a++) {
+            text += '<tr>';
+            for (let b = 1; b <= 9; b++) {
+                let ta = a.toString().padStart(2, '0');
+                let tb = b.toString().padStart(2, '0');
+                let tc = (a * b).toString().padStart(2, '0');
+                text += `<td class='border'> ${ta} * ${tb} = ${tc} </td>`;
+            }
+            text += "</tr>";
+
+        }
+        document.getElementById('dd').innerHTML = text;
+        dd.innerHTML = text;
+
+
+
+        let text2 = ''
+        for (let a = 1; a <= 9; a++) {
+            text2 += "<div class='row'>"
+            for (let b = 1; b <= 9; b++) {
+                let sum = a * b;
+                if (sum < 10) {
+                    sum = '0' + sum;
+                }
+                let ta = a.toString().padStart(2, '0')
+                let tb = b.toString().padStart(2, '0')
+                text2 += `<div class='col border'> <span class='kwd'>${ta}</span> * <span class='kwd2'>${tb}</span> = <span class='kwd3'>${sum}</span> </div>`
+
+            }
+            text2 += "</div>";
+        }
+        document.getElementById('demo').innerHTML = text2
+        // demo.innerHTML = text2
+
+        let objarr = {
+            'a': 1,
+            "b": 2,
+            "c": 3
+        };
+        let watch = '';
+        let arr = Object.keys(objarr)
+        arr.forEach(function (a, b) {
+            let value = objarr[key];
+            watch += `key = ${key} value = ${value} <br>`;
+        });
+        document.getElementById('arr').innerHTML = watch;
+    </script>
+</body>
+
+</html>
