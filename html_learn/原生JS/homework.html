@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid mb-3 mt-3 text-center">
+        <label class="" for="a">第一個數字</label>
+        <input class="me-5" type="number" id="a" name="a">
+
+        <select class="me-5" id="opt">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+
+        <label class="" for="b">第二個數字</label>
+        <input class="" type="number" id="b" name="b">
+
+    </div>
+    <div class="container-fluid text-center">
+
+        <button class="btn btn-primary btn-lg text-center" onclick="calc()">計算</button>
+    </div>
+
+    <div class="container-fluid text-center">
+        <div id="show"></div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        function calc() {
+            // let a = parseInt(document.getElementById('a').value);
+            // let b = parseInt(document.getElementById('b').value);
+            // let opt = document.getElementById('opt').value;
+            // let reslut = '';
+
+            // switch (opt) {
+            //     case '+':
+            //         reslut = a + b;
+            //         break;
+
+            //     case '-':
+            //         reslut = a - b;
+            //         break;
+            //     case '*':
+            //         reslut = a * b;
+            //         break;
+            //     case '/':
+            //         reslut = a / b;
+            //         break;
+            // }
+            // let show = document.getElementById('show')
+            // show.innerHTML =
+            //     `
+            // <h1>${a} ${opt} ${b} = ${reslut}</h1>
+            // `
+
+            $.get('./homework.php', function (data) {
+                $('#a').value = data['a'];
+                console.log($('#a').value);
+                $('#b').value = data['b'];
+                let opt = $('#opt')
+
+                $.each(data, function (key, val) {
+
+
+                })
+            })
+        }
+    </script>
+</body>
+
+</html>
