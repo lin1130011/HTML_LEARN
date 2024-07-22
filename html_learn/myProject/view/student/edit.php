@@ -14,40 +14,25 @@
 </head>
 
 <body>
-
-    <div class="container mt-3">
-        <h2>Students List</h2>
-        <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>id</th>
-                    <th>name</th>
-                    <th>mobile</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>amy</td>
-                    <td>0911-111-111</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>bob</td>
-                    <td>0922-222-222</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>cat</td>
-                    <td>0933-333-333</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="w-50 m-auto">
+        <form action="/action_page.php" method="post" class="w-100">
+            <div class="mb-3 mt-3">
+                <label for="id" class="form-label">id:</label>
+                <input type="number" class="form-control" id="" name="id" value="1" readonly>
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="name" class="form-label">name:</label>
+                <input type="text" class="form-control" id="" name="name">
+            </div>
+            <div class="mb-3">
+                <label for="mobile" class="form-label">mobile:</label>
+                <input type="number" class="form-control" id="" name="mobile">
+            </div>
+            <div class="d-grid ">
+                <button type="submit" class="btn btn-lg btn-block btn-primary">編輯</button>
+            </div>
+        </form>
     </div>
-
-
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
