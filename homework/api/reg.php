@@ -3,4 +3,8 @@ include_once "./base.php";
 
 dd($_POST);
 
-echo $User->count('acc', $_POST['pwd']);
+if ($User->count('acc', $_POST['pwd'] > 0)) {
+    echo "已存在";
+} else {
+    $User->store($_POST);
+}

@@ -21,7 +21,11 @@ class DB
 
     function store($data)
     {
-        dd($data);
+        $result = $this->a2s($data);
+        $keys = array_keys($data);
+        $val = join(",", $result);
+        dd($keys);
+        dd($val);
         $sql = "INSERT INTO `{$this->table}`(`id`, `img`, `text`, `sh`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]')";
         echo $sql;
     }
