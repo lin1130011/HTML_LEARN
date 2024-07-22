@@ -31,7 +31,7 @@
             <input type="password" class="form-control" id="pwd2" placeholder="Check password" name="pwd2">
         </div>
         <div class="mb-3 mt-5 text-center">
-            <button type="submit" class="btn btn-primary" onclick="re()">註冊</button>
+            <button type="button" class="btn btn-primary" onclick="reg()">註冊</button>
         </div>
     </form>
 </div>
@@ -48,8 +48,17 @@
         } else if (data.pwd !== data.pwd2) {
             alert("請確認密碼")
         } else {
-            $.post("./api/reg.php", data, (res) => {
-                console.log(res);
+            $.post("./api/reg.php", {
+                acc: data.acc,
+                pwd: data.pwd
+            }, (res) => {
+                if (res == 0) {
+                    alert("該帳號已被註冊")
+                    location.reload()
+                } else {
+                    alert("註冊成功")
+                    location.href = "./index.php"
+                }
             })
         }
 

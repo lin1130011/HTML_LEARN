@@ -21,13 +21,14 @@ class DB
 
     function store($data)
     {
-        $result = $this->a2s($data);
+
         $keys = array_keys($data);
-        $val = join(",", $result);
+
         dd($keys);
-        dd($val);
-        $sql = "INSERT INTO `{$this->table}`(`id`, `img`, `text`, `sh`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]')";
-        echo $sql;
+        // $sql = "INSERT INTO `{$this->table}`(``) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]')";
+        $sql = "INSERT INTO `{$this->table}` " . "(`" . join("`,`", $keys) . "`)" . " VALUES " . "('" . join("','", $data) . "')";
+        // echo $sql;
+        return $this->pdo->exec($sql);
     }
 
     function update($data)
@@ -40,10 +41,11 @@ class DB
         $sql = "DELETE FROM `{$this->table}` WHERE 0";
     }
 
-    function count($key, $val)
+    function count($data)
     {
-
-        $sql = "SELECT COUNT(*) FROM $this->table WHERE `$key` = '$val'";
+        $tmp = $this->a2s($data);
+        $sql = "SELECT COUNT(*) FROM $this->table WHERE " . join(" && ", $tmp);
+        // echo $sql;
         return $this->pdo->query($sql)->fetchColumn();
     }
 
@@ -75,4 +77,4 @@ function dd($array)
     echo "</pre>";
 }
 
-$User = new DB('users');
+// $User = new DB('users');

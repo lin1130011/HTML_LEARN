@@ -1,10 +1,12 @@
 <?php
 include_once "./base.php";
+$User = new DB('users');
 
-dd($_POST);
+$try = $User->count($_POST);
 
-if ($User->count('acc', $_POST['pwd'] > 0)) {
-    echo "已存在";
-} else {
+if ($try == 0) {
     $User->store($_POST);
+    echo 1;
+} else {
+    echo 0;
 }
