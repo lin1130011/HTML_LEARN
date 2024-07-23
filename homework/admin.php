@@ -17,7 +17,11 @@ include_once "./api/base.php";
 </head>
 
 <body>
-
+    <?php
+    if ($_SESSION['type'] != 1) {
+        header("Location:index.php");
+    }
+    ?>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

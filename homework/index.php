@@ -24,6 +24,11 @@ include_once "./api/base.php";
 </head>
 
 <body>
+    <?php
+    if (isset($_SESSION['type'])) {
+        echo "<div>" . $_SESSION['type'] . "</div>";
+    }
+    ?>
     <div class="container">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="container-fluid">
