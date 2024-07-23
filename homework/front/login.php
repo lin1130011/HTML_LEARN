@@ -41,11 +41,13 @@
         }
         $.post("./api/chk_login.php", data, (res) => {
             if (res == 1) {
+                console.log('res', res);
                 alert("登入成功")
-                location.href = "./index.php"
+                // location.href = "./index.php"
             } else {
-                alert("登入失敗 點選確認前往註冊")
-                location.href = "?do=reg"
+                console.log('res', res);
+                alert("登入失敗 請重新登入")
+                // location.reload()
             }
         })
     }

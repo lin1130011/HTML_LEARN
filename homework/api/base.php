@@ -1,4 +1,5 @@
 <?php
+session_start();
 class DB
 {
     public $pdo;
@@ -19,12 +20,19 @@ class DB
         return $data;
     }
 
+    function getOne($data)
+    {
+        $tmp = $this->a2s($data);
+        $sql = "SELECT * FROM $this->table WHERE " . join(" && ", $tmp);
+
+        return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
+    }
     function store($data)
     {
 
         $keys = array_keys($data);
 
-        dd($keys);
+        // dd($keys);
         // $sql = "INSERT INTO `{$this->table}`(``) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]')";
         $sql = "INSERT INTO `{$this->table}` " . "(`" . join("`,`", $keys) . "`)" . " VALUES " . "('" . join("','", $data) . "')";
         // echo $sql;

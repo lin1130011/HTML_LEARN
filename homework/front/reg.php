@@ -52,12 +52,14 @@
                 acc: data.acc,
                 pwd: data.pwd
             }, (res) => {
-                if (res == 0) {
-                    alert("該帳號已被註冊")
-                    location.reload()
-                } else {
+                if (res == 1) {
+
                     alert("註冊成功")
                     location.href = "./index.php"
+                } else {
+
+                    alert("該帳號已被註冊")
+                    location.reload()
                 }
             })
         }
