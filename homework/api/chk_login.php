@@ -2,9 +2,10 @@
 include_once "./base.php";
 $User = new DB("users");
 
-if ($User->count($_POST) == 1) {
+if ($User->count($_POST)) {
     $tmp = $User->getOne($_POST);
-    echo $tmp['type'];
+    $_SESSION['type'] = $tmp['type'];
+    echo $_SESSION['type'];
 } else {
-    echo 0;
+    echo 3;
 }

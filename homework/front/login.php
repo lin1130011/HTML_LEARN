@@ -41,13 +41,17 @@
         }
         $.post("./api/chk_login.php", data, (res) => {
             if (res == 1) {
-                console.log('res', res);
+                console.log('res1', res);
+                alert("管理登入成功")
+                location.href = "./admin.php"
+            } else if (res == 0) {
+                console.log('res0', res);
                 alert("登入成功")
-                // location.href = "./index.php"
+                location.href = "./index.php"
             } else {
-                console.log('res', res);
+                console.log('res?', res);
                 alert("登入失敗 請重新登入")
-                // location.reload()
+                location.reload()
             }
         })
     }
