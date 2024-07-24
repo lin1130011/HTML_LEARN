@@ -18,17 +18,20 @@ include_once "./api/base.php";
             width: 100%;
             height: 50vh;
         }
+
+        .footer {
+            margin-top: 50px;
+            /* width: 100%; */
+            height: 40vh;
+            background-color: #003060;
+        }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-    <?php
-    if (isset($_SESSION['type'])) {
-        echo "<div>" . $_SESSION['type'] . "</div>";
-    }
-    ?>
+
     <div class="container">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="container-fluid">
@@ -45,9 +48,33 @@ include_once "./api/base.php";
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#">Disabled</a>
                     </li>
-                    <li class="nav-item ms-auto">
-                        <button type="button" class="btn btn-primary" onclick="location.href='?do=login'">login</button>
-                    </li>
+                    <?php
+                    if (isset($_SESSION['type'])) {
+                        if ($_SESSION['type'] == 1) {
+                    ?>
+                            <li class="nav-item ms-auto">
+                                <button type="button" class="btn btn-warning" onclick="location.href='./admin.php'">返回管理</button>
+                            </li>
+                        <?php
+                        } else {
+                        ?>
+                            <li class="nav-item ms-auto">
+                                <button type="button" class="btn btn-danger" onclick="logout()">登出</button>
+                            </li>
+                        <?php
+                        }
+                        ?>
+                    <?php
+                    } else {
+                    ?>
+                        <li class="nav-item ms-auto">
+                            <button type="button" class="btn btn-primary" onclick="location.href='?do=login'">登入</button>
+                        </li>
+                    <?php
+                    }
+                    ?>
+
+
                 </ul>
             </div>
         </nav>
@@ -69,7 +96,12 @@ include_once "./api/base.php";
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-
+        function logout() {
+            $.post("./api/logout.php", (res) => {
+                alert("已登出")
+                location.reload()
+            })
+        }
     </script>
 </body>
 

@@ -136,3 +136,44 @@
         </div>
     </div>
 </div>
+
+<footer class="footer">
+    <div class="container p-5 bg-">
+        <div class="top w-100 h-50 bg- d-flex">
+            <div class="col-6 bg- d-flex flex-column justify-content-center">
+                <div class="t text-white">
+                    FOLLOW US
+                </div>
+                <div>
+                    <button type="button" class=" btn btn-success">前往</button>
+                </div>
+            </div>
+            <div class="col-6 d-flex flex-column justify-content-center">
+                <div class="t text-white">公司資訊</div>
+                <div class="t text-white">✦供應商資訊：廖憨憨股份有限公司</div>
+                <div class="t text-white">✦供應商地址：新北市三重區重新路</div>
+                <div class="t text-white">✦供應商電話：02-35012035 (一)~(五) 10:00-18:00</div>
+                <div class="t text-white">✦食品業者登錄者字號：F-129146530-00001-4</div>
+            </div>
+        </div>
+        <hr>
+        <div class="bottom w-100 h-50 bg- d-flex">
+            <div class="col-6">
+                <div class="t text-white">
+                    網頁提供：
+                    繁體中文
+                    English
+                </div>
+
+            </div>
+            <div class="col-6 text-end">
+                <div class="t text-white">
+                    條款及條件
+                    隱私權政策
+                    技術支援：
+                    Oddle.me
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
