@@ -37,10 +37,10 @@ include_once "./api/base.php";
                         <a class="nav-link active" href="./index.php">預覽前台</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="?do=main">編輯banner</a>
+                        <a class="nav-link" href="?do=banner">編輯banner</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">上架商品</a>
+                        <a class="nav-link" href="?do=store">上架商品</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#">Disabled</a>
@@ -55,14 +55,14 @@ include_once "./api/base.php";
     </div>
 
     <?php
-    // $do = $_GET['do'] ?? 'main';
-    // $file = "./backend/{$do}.php";
+    $do = $_GET['do'] ?? 'main';
+    $file = "./backend/{$do}.php";
 
-    // if (file_exists($file)) {
-    //     include_once $file;
-    // } else {
-    //     include_once "./backend/main.php";
-    // }
+    if (file_exists($file)) {
+        include_once $file;
+    } else {
+        include_once "./backend/main.php";
+    }
     ?>
 
 

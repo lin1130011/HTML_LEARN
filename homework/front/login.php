@@ -18,15 +18,15 @@
     <img class="img-fluid" src="./cake/banner.png" alt="">
     <form action="/action_page.php">
         <h2 class="text-center">會員登入</h2>
-        <div class="mb-5 mt-5">
+        <div class="col-12 mb-5 mt-5">
             <label for="acc">帳號:</label>
             <input type="text" class="form-control" id="acc" placeholder="Enter email" name="acc">
         </div>
-        <div class="mb-5 mt-5">
+        <div class="col-12 mb-5 mt-5">
             <label for="pwd">密碼:</label>
             <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
         </div>
-        <div class="mb-5 mt-5">
+        <div class="col-12 mb-5 mt-5">
             <button type="button" class="btn btn-primary" onclick="login()">登入</button>
             <button type="button" class="btn btn-warning float-end" onclick="location.href='?do=reg'">註冊</button>
         </div>
@@ -40,17 +40,16 @@
             pwd: $("#pwd").val()
         }
         $.post("./api/chk_login.php", data, (res) => {
-            if (res == 1) {
-                console.log('res1', res);
-                alert("管理登入成功")
-                location.href = "./admin.php"
-            } else if (res == 0) {
-                console.log('res0', res);
-                alert("登入成功")
-                location.href = "./index.php"
+            if (res) {
+                if (res == 1) {
+                    alert("管理登入成功")
+                    location.href = "./admin.php"
+                } else {
+                    alert("登入成功")
+                    location.href = "./index.php"
+                }
             } else {
-                console.log('res?', res);
-                alert("登入失敗 請重新登入")
+                alert("登入失敗 請確認帳號密碼")
                 location.reload()
             }
         })

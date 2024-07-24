@@ -3,9 +3,10 @@ include_once "./base.php";
 $User = new DB("users");
 
 if ($User->count($_POST)) {
-    $tmp = $User->getOne($_POST);
-    $_SESSION['type'] = $tmp['type'];
-    echo $_SESSION['type'];
-} else {
-    echo 3;
+    $type = $User->getOne($_POST);
+    $_SESSION['type'] = $type['type'];
+    $_SESSION['user'] = $_POST['acc'];
+    if (isset($_SESSION['type'])) {
+        echo $_SESSION['type'];
+    }
 }
