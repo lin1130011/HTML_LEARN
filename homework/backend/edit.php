@@ -24,7 +24,7 @@ dd($_GET['id']);
                         <input type="text" value="<?= $look['text'] ?>" name="text">
                     </td>
                     <td>
-                        <input type="radio" value="<?= $look['sh'] ?>" <?= ($look['sh'] == 1) ? 'checked' : '' ?> name="sh">
+                        <input type="checkbox" value="<?= $look['sh'] ?>" <?= ($look['sh'] == 1) ? 'checked' : '' ?> name="sh">
                     </td>
                     <td>
                         <label for="">更換圖片</label>
