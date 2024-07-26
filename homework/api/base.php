@@ -22,9 +22,13 @@ class DB
 
     function getOne($data)
     {
-        $tmp = $this->a2s($data);
-        $sql = "SELECT * FROM $this->table WHERE " . join(" && ", $tmp);
-
+        if (is_array($data)) {
+            $tmp = $this->a2s($data);
+            $sql = "SELECT * FROM $this->table WHERE " . join(" && ", $tmp);
+        } else {
+            $sql = "SELECT * FROM $this->table WHERE `id` = $data";
+        }
+        echo $sql;
         return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
     function store($data)
@@ -41,8 +45,10 @@ class DB
 
     function update($data)
     {
-        $id = $data['id'];
-        $sql = "UPDATE `{$this->table}` SET `id`='[value-1]',`img`='[value-2]',`text`='[value-3]',`sh`='[value-4]' WHERE `id` = '{$id}'";
+        $tmp = $this->a2s($data);
+        // $sql = "UPDATE `{$this->table}` SET `id`='[value-1]',`img`='[value-2]',`text`='[value-3]',`sh`='[value-4]' WHERE `id` = '{$id}'";
+        $sql = "UPDATE `{$this->table}` SET " . join(" , ", $tmp) . " WHERE `id` = '{$data['id']}'";
+        echo $sql;
     }
     function del($data)
     {
