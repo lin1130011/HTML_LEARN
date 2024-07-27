@@ -28,7 +28,6 @@ class DB
         } else {
             $sql = "SELECT * FROM $this->table WHERE `id` = $data";
         }
-        echo $sql;
         return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
     function store($data)
@@ -48,11 +47,12 @@ class DB
         $tmp = $this->a2s($data);
         // $sql = "UPDATE `{$this->table}` SET `id`='[value-1]',`img`='[value-2]',`text`='[value-3]',`sh`='[value-4]' WHERE `id` = '{$id}'";
         $sql = "UPDATE `{$this->table}` SET " . join(" , ", $tmp) . " WHERE `id` = '{$data['id']}'";
-        echo $sql;
+        return $this->pdo->exec($sql);
     }
     function del($data)
     {
-        $sql = "DELETE FROM `{$this->table}` WHERE 0";
+        $sql = "DELETE FROM `{$this->table}` WHERE `id` = '{$data['id']}'";
+        return $this->pdo->exec($sql);
     }
 
     function count($data)
@@ -70,6 +70,10 @@ class DB
             $tmp[] = "`{$key}` = '{$value}'";
         }
         return $tmp;
+    }
+    function q($sql)
+    {
+        return $this->pdo->query($sql);
     }
 }
 
