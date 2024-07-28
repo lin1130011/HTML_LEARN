@@ -55,9 +55,8 @@ $banner = $Banner->getOne(['sh' => 1]);
                     </div>
                 </div>
             </div>
-
-        <?php endforeach ?>
-
+        <?php endforeach
+        ?>
     </div>
 </div>
 <?php
