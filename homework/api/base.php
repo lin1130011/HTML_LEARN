@@ -12,7 +12,7 @@ class DB
         $this->pdo = new PDO($this->dsn, 'root', '');
     }
 
-    function getAll()
+    function getAll(...$arg)
     {
         $sql = "select * from $this->table";
 
@@ -73,7 +73,7 @@ class DB
     }
     function q($sql)
     {
-        return $this->pdo->query($sql);
+        return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 

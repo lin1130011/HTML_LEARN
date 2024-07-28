@@ -22,7 +22,7 @@
                         <td class="align-middle"><?= $data['id'] ?></td>
                         <input id="id" type="hidden" name="id" value="<?= $data['id'] ?>">
                         <td>
-                            <img src="./images/<?= $data['img'] ?>" alt="" style="width: 100px; height: 100px;">
+                            <img src="./images/banner/<?= $data['img'] ?>" alt="" style="width: 100px; height: 100px;">
                         </td>
                         <td class="align-middle">
                             <input type="text" value="<?= $data['text'] ?>" name="text" readonly style="border: none;">

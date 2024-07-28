@@ -1,31 +1,33 @@
+<?php
+$Banner = new DB('banner');
+$banner = $Banner->getOne(['sh' => 1]);
+?>
+
+
 <div class="container mt-5">
-    <img class="banner" src="./cake/banner.png" alt="">
+    <img class="banner" src="./images/banner/<?= $banner['img'] ?>" alt="">
 </div>
 
 <div class="container mt-5">
     <h1 class="text-center">熱門銷售</h1>
-    <!-- <div style="width: 100%; height:30vh;background-color:aqua;display:flex;justify-content: center;
-    align-items: center;">
-            <h2>《銷售前三或前五名的圖會在此輪撥》</h2>
-        </div> -->
+    <?php
+    $Store = new DB('store');
+    $store = $Store->q("select * from `store` ORDER BY good DESC LIMIT 3");
+    ?>
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
         <!-- Indicators/dots -->
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            <?php foreach ($store as $key => $value) : ?>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="<?= $key ?>" class="<?= $key === 0 ? 'active' : '' ?>"></button>
+            <?php endforeach; ?>
         </div>
         <!-- The slideshow/carousel -->
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="carouse" src="./cake/cake1.png" alt="Los Angeles" class="d-block" style="width:100%">
-            </div>
-            <div class="carousel-item">
-                <img class="carouse" src="./cake/cake2.png" alt="Chicago" class="d-block" style="width:100%">
-            </div>
-            <div class="carousel-item">
-                <img class="carouse" src="./cake/cake3.png" alt="New York" class="d-block" style="width:100%">
-            </div>
+            <?php foreach ($store as $key => $value) : ?>
+                <div class="carousel-item <?= $key === 0 ? 'active' : '' ?>">
+                    <img class="carouse" src="./images/store/<?= $value['img'] ?>" alt="<?= $value['text'] ?>" class="d-block" style="width:100%">
+                </div>
+            <?php endforeach; ?>
         </div>
         <!-- Left and right controls/icons -->
         <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
@@ -40,102 +42,37 @@
 <div class="container mt-5">
     <h1 class="text-center">商品展示區(卡片)</h1>
     <div class="row w-100 m-auto mt-5">
-        <div class="col-4">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="./cake/cake4.png" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                    <a href="#" class="btn btn-primary">See Profile</a>
+        <?php
+        $shop = $Store->getAll();
+        foreach ($shop as $key => $value) : ?>
+            <div class="col-4">
+                <div class="card" style="width:400px">
+                    <img class="card-img-top" src="./images/store/<?= $value['img'] ?>" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title"><?= $value['name'] ?></h4>
+                        <p class="card-text"><?= $value['text'] ?></p>
+                        <a class="btn btn-primary order-btn" onclick="buy(<?= $value['id'] ?>)">訂購</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-4">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="./cake/cake5.png" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                    <a href="#" class="btn btn-primary">See Profile</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="./cake/cake6.png" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                    <a href="#" class="btn btn-primary">See Profile</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row w-100 m-auto mt-5">
-        <div class="col-4">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="./cake/cake4.png" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                    <a href="#" class="btn btn-primary">See Profile</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="./cake/cake5.png" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                    <a href="#" class="btn btn-primary">See Profile</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="./cake/cake6.png" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                    <a href="#" class="btn btn-primary">See Profile</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row w-100 m-auto mt-5">
-        <div class="col-4">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="./cake/cake4.png" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                    <a href="#" class="btn btn-primary">See Profile</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="./cake/cake5.png" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                    <a href="#" class="btn btn-primary">See Profile</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="./cake/cake6.png" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                    <a href="#" class="btn btn-primary">See Profile</a>
-                </div>
-            </div>
-        </div>
+
+        <?php endforeach ?>
+
     </div>
 </div>
+<?php
+if (isset($_SESSION['type'])) {
+    # code...
+?>
+    <div class="position-fixed bottom-0 end-0 p-3">
+        <a href="?do=shop" class="btn btn-success">
+            <i class="bi bi-cart"></i>
+            <span id="cart" class="badge-notification">0</span>
+        </a>
+    </div>
+<?php
+}
+?>
 
 <footer class="footer">
     <div class="container p-5 bg-">
@@ -177,3 +114,16 @@
         </div>
     </div>
 </footer>
+<script>
+    let cnt = 0
+
+    function buy(id) {
+        cnt++
+        $("#cart").text(cnt)
+        $.post("./front/shop.php", {
+            id: id
+        }, (res) => {
+            console.log(res);
+        })
+    }
+</script>

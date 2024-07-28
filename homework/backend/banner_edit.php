@@ -3,7 +3,7 @@ $Banner = new DB('banner');
 ?>
 <div class="container">
     <form action="./api/banner_edit.php" method="post" enctype="multipart/form-data">
-        <table class="table text-center">
+        <table class="table text-center mt-5">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -21,7 +21,7 @@ $Banner = new DB('banner');
                     <td class="align-middle"><?= $look['id'] ?></td>
                     <input type="hidden" name="id" value="<?= $look['id'] ?>">
                     <td>
-                        <img src="./images/<?= $look['img'] ?>" alt="" style="width: 100px; height: 100px;">
+                        <img src="./images/banner/<?= $look['img'] ?>" alt="" style="width: 100px; height: 100px;">
 
                     </td>
                     <td class="align-middle">

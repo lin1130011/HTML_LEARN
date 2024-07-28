@@ -1,21 +1,22 @@
 <?php
-$Banner = new DB('banner');
+$Store = new DB('store');
 ?>
 <div class="container">
-    <form action="./api/banner_edit.php" method="post" enctype="multipart/form-data">
+    <form action="./api/store_edit.php" method="post" enctype="multipart/form-data">
         <table class="table text-center">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>圖片</th>
-                    <th>修改文字</th>
+                    <th>商品圖</th>
+                    <th>修改商品介紹</th>
+                    <th>修改定價</th>
                     <th>更換顯示</th>
                     <th class="text-center">更換圖片(可選)</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                $look = $Banner->getOne($_GET['id']);
+                $look = $Store->getOne($_GET['id']);
                 ?>
                 <tr>
                     <td class="align-middle"><?= $look['id'] ?></td>
@@ -26,6 +27,9 @@ $Banner = new DB('banner');
                     </td>
                     <td class="align-middle">
                         <input type="text" value="<?= $look['text'] ?>" name="text">
+                    </td>
+                    <td class="align-middle">
+                        <input type="number" value="<?= $look['price'] ?>" name="price">
                     </td>
                     <td class="align-middle">
                         <select name="sh" id="">
