@@ -13,11 +13,10 @@ include_once "./api/base.php";
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Noto+Sans+Glagolitic&family=Noto+Serif+Khitan+Small+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
     <style>
         * {
-            font-family: "Edu AU VIC WA NT Hand", cursive;
-
+            font-family: "Noto Sans TC", sans-serif;
         }
 
         .banner {
@@ -49,13 +48,13 @@ include_once "./api/base.php";
                         <a class="nav-link active" href="?do=main">首頁</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="#demo">熱銷商品</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="#">商品</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+                        <a class="nav-link disabled" href="#">客戶意見</a>
                     </li>
 
                     <?php

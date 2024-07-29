@@ -6,6 +6,7 @@
                 <tr>
                     <th>ID</th>
                     <th>商品圖片</th>
+                    <th>商品名稱</th>
                     <th>商品介紹</th>
                     <th>定價</th>
                     <th>顯示</th>
@@ -24,6 +25,9 @@
                         <input type="hidden" name="id" value="<?= $data['id'] ?>">
                         <td>
                             <img src="./images/store/<?= $data['img'] ?>" alt="" style="width: 100px; height: 100px;">
+                        </td>
+                        <td class="align-middle">
+                            <input type="text" value="<?= $data['name'] ?>" name="name" readonly style="border: none;">
                         </td>
                         <td class="align-middle">
                             <input type="text" value="<?= $data['text'] ?>" name="text" readonly style="border: none;">

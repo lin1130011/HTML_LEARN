@@ -1,13 +1,14 @@
 <?php
 $Store = new DB('store');
 ?>
-<div class="container">
+<div class="container mt-5">
     <form action="./api/store_edit.php" method="post" enctype="multipart/form-data">
         <table class="table text-center">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>商品圖</th>
+                    <th>修改商品名稱</th>
                     <th>修改商品介紹</th>
                     <th>修改定價</th>
                     <th>更換顯示</th>
@@ -22,8 +23,11 @@ $Store = new DB('store');
                     <td class="align-middle"><?= $look['id'] ?></td>
                     <input type="hidden" name="id" value="<?= $look['id'] ?>">
                     <td>
-                        <img src="./images/<?= $look['img'] ?>" alt="" style="width: 100px; height: 100px;">
+                        <img src="./images/store/<?= $look['img'] ?>" alt="" style="width: 100px; height: 100px;">
 
+                    </td>
+                    <td class="align-middle">
+                        <input type="text" value="<?= $look['name'] ?>" name="name" readonly style="border: none;">
                     </td>
                     <td class="align-middle">
                         <input type="text" value="<?= $look['text'] ?>" name="text">

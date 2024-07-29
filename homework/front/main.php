@@ -26,6 +26,10 @@ $banner = $Banner->getOne(['sh' => 1]);
             <?php foreach ($store as $key => $value) : ?>
                 <div class="carousel-item <?= $key === 0 ? 'active' : '' ?>">
                     <img class="carouse" src="./images/store/<?= $value['img'] ?>" alt="<?= $value['text'] ?>" class="d-block" style="width:100%">
+                    <div class="carousel-caption">
+                        <h3 class=" text-body"><?= $value['name'] ?></h3>
+                        <p class=" text-white"><?= $value['text'] ?></p>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </div>
@@ -45,13 +49,13 @@ $banner = $Banner->getOne(['sh' => 1]);
         <?php
         $shop = $Store->getAll();
         foreach ($shop as $key => $value) : ?>
-            <div class="col-4">
+            <div class="col-12 col-lg-4 mt-5 mb-5">
                 <div class="card" style="width:400px">
                     <img class="card-img-top" src="./images/store/<?= $value['img'] ?>" alt="Card image" style="width:100%">
                     <div class="card-body">
                         <h4 class="card-title"><?= $value['name'] ?></h4>
                         <p class="card-text"><?= $value['text'] ?></p>
-                        <a class="btn btn-primary order-btn" onclick="buy(<?= $value['id'] ?>)">訂購</a>
+                        <a class="btn btn-primary order-btn ms-auto" onclick="buy(<?= $value['id'] ?>)">訂購</a>
                     </div>
                 </div>
             </div>
@@ -64,7 +68,7 @@ if (isset($_SESSION['type'])) {
     # code...
 ?>
     <div class="position-fixed bottom-0 end-0 p-3">
-        <a href="?do=shop" class="btn btn-success">
+        <a href="?do=shop" class="btn btn-lg btn-success">
             <i class="bi bi-cart"></i>
             <span id="cart" class="badge-notification">0</span>
         </a>
@@ -78,13 +82,13 @@ if (isset($_SESSION['type'])) {
         <div class="top w-100 h-50 bg- d-flex">
             <div class="col-6 bg- d-flex flex-column justify-content-center">
                 <div class="t text-white">
-                    FOLLOW US
+                    FOLLOW　US
                 </div>
                 <div>
-                    <button type="button" class=" btn btn-success">前往</button>
+                    <button type="button" class=" btn btn-success mt-3">前往</button>
                 </div>
             </div>
-            <div class="col-6 d-flex flex-column justify-content-center">
+            <div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
                 <div class="t text-white">公司資訊</div>
                 <div class="t text-white">✦供應商資訊：廖憨憨股份有限公司</div>
                 <div class="t text-white">✦供應商地址：新北市三重區重新路</div>
@@ -114,15 +118,4 @@ if (isset($_SESSION['type'])) {
     </div>
 </footer>
 <script>
-    let cnt = 0
-
-    function buy(id) {
-        cnt++
-        $("#cart").text(cnt)
-        $.post("./front/shop.php", {
-            id: id
-        }, (res) => {
-            console.log(res);
-        })
-    }
 </script>
