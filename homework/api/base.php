@@ -4,6 +4,7 @@ class DB
 {
     public $pdo;
     public $dsn = "mysql:host=localhost;dbname=cakestore;charset=utf8";
+    // public $dsn = "mysql:host=localhost;dbname=s1130111;charset=utf8";
     public $table;
 
     function __construct($table)
