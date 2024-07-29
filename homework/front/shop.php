@@ -3,7 +3,7 @@ include_once "./api/base.php";
 $Store = new DB('store');
 ?>
 <div class="container">
-    <form action="./api/shop.php" method="post" enctype="multipart/form-data">
+    <form action="?do=tmp_shop" method="post" enctype="multipart/form-data">
         <table class="table text-center mt-5">
             <thead>
                 <tr>
@@ -32,7 +32,7 @@ $Store = new DB('store');
                         <input type="number" name="total">
                     </td>
                     <td class="align-middle">
-                        <button class="btn btn-primary" type="submit">送出訂單</button>
+                        <button class="btn btn-primary" type="button" onclick="buy()">送出訂單</button>
                         <!-- <button class="btn btn-danger" type="submit">刪除</button> -->
                     </td>
                 </tr>

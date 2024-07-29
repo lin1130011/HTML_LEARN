@@ -104,9 +104,9 @@ include_once "./api/base.php";
         # code...
     ?>
         <div class="position-fixed bottom-0 end-0 p-3">
-            <a href="" class="btn btn-lg btn-success">
+            <a href="?do=tmp_shop" class="btn btn-lg btn-success">
                 <i class="bi bi-cart"></i>
-                <span id="cart" class="badge-notification">0</span>
+                <span id="cart" class="badge-notification"><?= $_SESSION['time'] ?></span>
             </a>
         </div>
     <?php
