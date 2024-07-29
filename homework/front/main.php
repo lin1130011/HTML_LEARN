@@ -47,7 +47,7 @@ $banner = $Banner->getOne(['sh' => 1]);
     <h1 class="text-center">商品展示區(卡片)</h1>
     <div class="row w-100 m-auto mt-5">
         <?php
-        $shop = $Store->getAll();
+        $shop = $Store->q("select * from store where sh = 1");
         foreach ($shop as $key => $value) : ?>
             <div class="col-12 col-lg-4 mt-5 mb-5">
                 <div class="card" style="width:400px">
@@ -55,7 +55,7 @@ $banner = $Banner->getOne(['sh' => 1]);
                     <div class="card-body">
                         <h4 class="card-title"><?= $value['name'] ?></h4>
                         <p class="card-text"><?= $value['text'] ?></p>
-                        <a class="btn btn-primary order-btn ms-auto" onclick="buy(<?= $value['id'] ?>)">訂購</a>
+                        <a id="test" class="btn btn-primary order-btn ms-auto" href="?do=shop&id=<?= $value['id'] ?>">訂購</a>
                     </div>
                 </div>
             </div>
@@ -63,19 +63,7 @@ $banner = $Banner->getOne(['sh' => 1]);
         ?>
     </div>
 </div>
-<?php
-if (isset($_SESSION['type'])) {
-    # code...
-?>
-    <div class="position-fixed bottom-0 end-0 p-3">
-        <a href="?do=shop" class="btn btn-lg btn-success">
-            <i class="bi bi-cart"></i>
-            <span id="cart" class="badge-notification">0</span>
-        </a>
-    </div>
-<?php
-}
-?>
+
 
 <footer class="footer">
     <div class="container p-5 bg-">
@@ -118,4 +106,5 @@ if (isset($_SESSION['type'])) {
     </div>
 </footer>
 <script>
+
 </script>

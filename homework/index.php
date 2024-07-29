@@ -56,7 +56,6 @@ include_once "./api/base.php";
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#">客戶意見</a>
                     </li>
-
                     <?php
                     if (isset($_SESSION['type'])) {
                         if ($_SESSION['type'] == 1) {
@@ -100,7 +99,19 @@ include_once "./api/base.php";
         include_once "./front/main.php";
     }
     ?>
-
+    <?php
+    if (isset($_SESSION['type'])) {
+        # code...
+    ?>
+        <div class="position-fixed bottom-0 end-0 p-3">
+            <a href="" class="btn btn-lg btn-success">
+                <i class="bi bi-cart"></i>
+                <span id="cart" class="badge-notification">0</span>
+            </a>
+        </div>
+    <?php
+    }
+    ?>
 
 
 

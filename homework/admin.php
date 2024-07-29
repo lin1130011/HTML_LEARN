@@ -25,7 +25,7 @@ include_once "./api/base.php";
 
 <body>
     <?php
-    if ($_SESSION['type'] !== 1) {
+    if ($_SESSION['type'] != 1) {
         header("location:./index.php");
     }
     ?>

@@ -11,6 +11,7 @@ class DB
     {
         $this->table = $table;
         $this->pdo = new PDO($this->dsn, 'root', '');
+        // $this->pdo = new PDO($this->dsn, 's1130111', 's1130111');
     }
 
     function getAll(...$arg)
@@ -80,12 +81,7 @@ class DB
 
 
 
-function q($sql)
-{
-    $dsn = "mysql:host=localhost;charset=utf8;dbname=cakestore";
-    $pdo = new PDO($dsn, 'root', '');
-    return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-}
+
 
 
 
