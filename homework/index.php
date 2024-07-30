@@ -120,7 +120,7 @@ include_once "./api/base.php";
         function logout() {
             $.post("./api/logout.php", (res) => {
                 alert("已登出")
-                location.reload()
+                location.href = "./index.php";
             })
         }
     </script>
