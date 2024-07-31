@@ -4,7 +4,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>ID</th>
+
                     <th>商品圖片</th>
                     <th>商品名稱</th>
                     <th>商品介紹</th>
@@ -21,7 +21,7 @@
 
                 foreach ($datas as $key => $data) : ?>
                     <tr>
-                        <td class="align-middle"><?= $data['id'] ?></td>
+
                         <input type="hidden" name="id" value="<?= $data['id'] ?>">
                         <td>
                             <img src="./images/store/<?= $data['img'] ?>" alt="" style="width: 100px; height: 100px;">

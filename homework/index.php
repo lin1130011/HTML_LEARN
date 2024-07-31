@@ -51,7 +51,7 @@ include_once "./api/base.php";
                         <a class="nav-link" href="#demo">熱銷商品</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">商品</a>
+                        <a class="nav-link" href="#shop">商品</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#">客戶意見</a>
@@ -104,7 +104,7 @@ include_once "./api/base.php";
         # code...
     ?>
         <div class="position-fixed bottom-0 end-0 p-3">
-            <a href="?do=tmp_shop" class="btn btn-lg btn-success">
+            <a href="?do=show_order" class="btn btn-lg btn-success">
                 <i class="bi bi-cart"></i>
                 <span id="cart" class="badge-notification"><?= $_SESSION['time'] ?></span>
             </a>

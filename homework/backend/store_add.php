@@ -4,6 +4,7 @@
         <table class="table text-center">
             <thead>
                 <th>需要上架的商品</th>
+                <th>商品名稱</th>
                 <th>商品介紹</th>
                 <th>定價</th>
                 <!-- <th>人氣排行</th> -->
@@ -11,6 +12,9 @@
             <tbody>
                 <td>
                     <input type="file" name="img" id="">
+                </td>
+                <td>
+                    <input type="text" name="name" id="">
                 </td>
                 <td>
                     <input type="text" name="text" id="">

@@ -2,7 +2,6 @@
 
 
 $_SESSION['time'] += 1;
-dd($_POST);
 $name = $_POST['text'];
 $price = $_POST['price'];
 $total = $_POST['price'] * $_POST['total'];
@@ -14,4 +13,4 @@ $_SESSION['shop'][] = [
 ];
 
 
-dd($_SESSION['shop']);
+header("location:?do=main#shop");

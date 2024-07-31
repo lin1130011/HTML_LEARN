@@ -32,7 +32,7 @@ $Store = new DB('store');
                         <input type="number" name="total">
                     </td>
                     <td class="align-middle">
-                        <button class="btn btn-primary" type="button" onclick="buy()">送出訂單</button>
+                        <button class="btn btn-primary" type="submit">送出訂單</button>
                         <!-- <button class="btn btn-danger" type="submit">刪除</button> -->
                     </td>
                 </tr>
@@ -41,3 +41,6 @@ $Store = new DB('store');
         </table>
     </form>
 </div>
+<script>
+
+</script>

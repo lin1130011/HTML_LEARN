@@ -45,7 +45,7 @@ $banner = $Banner->getOne(['sh' => 1]);
 
 <div class="container mt-5">
     <h1 class="text-center">商品展示區(卡片)</h1>
-    <div class="row w-100 m-auto mt-5">
+    <div class="row w-100 m-auto mt-5" id="shop">
         <?php
         $shop = $Store->q("select * from store where sh = 1");
         foreach ($shop as $key => $value) : ?>

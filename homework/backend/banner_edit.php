@@ -6,7 +6,7 @@ $Banner = new DB('banner');
         <table class="table text-center mt-5">
             <thead>
                 <tr>
-                    <th>ID</th>
+
                     <th>圖片</th>
                     <th>修改文字</th>
                     <th>更換顯示</th>
@@ -18,7 +18,7 @@ $Banner = new DB('banner');
                 $look = $Banner->getOne($_GET['id']);
                 ?>
                 <tr>
-                    <td class="align-middle"><?= $look['id'] ?></td>
+
                     <input type="hidden" name="id" value="<?= $look['id'] ?>">
                     <td>
                         <img src="./images/banner/<?= $look['img'] ?>" alt="" style="width: 100px; height: 100px;">

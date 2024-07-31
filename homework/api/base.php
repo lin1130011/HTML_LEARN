@@ -82,9 +82,6 @@ class DB
 
 
 
-
-
-
 function dd($array)
 {
     echo "<pre>";

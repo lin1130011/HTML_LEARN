@@ -6,7 +6,7 @@ $Store = new DB('store');
         <table class="table text-center">
             <thead>
                 <tr>
-                    <th>ID</th>
+
                     <th>商品圖</th>
                     <th>修改商品名稱</th>
                     <th>修改商品介紹</th>
@@ -20,14 +20,14 @@ $Store = new DB('store');
                 $look = $Store->getOne($_GET['id']);
                 ?>
                 <tr>
-                    <td class="align-middle"><?= $look['id'] ?></td>
+
                     <input type="hidden" name="id" value="<?= $look['id'] ?>">
                     <td>
                         <img src="./images/store/<?= $look['img'] ?>" alt="" style="width: 100px; height: 100px;">
 
                     </td>
                     <td class="align-middle">
-                        <input type="text" value="<?= $look['name'] ?>" name="name" readonly style="border: none;">
+                        <input type="text" value="<?= $look['name'] ?>" name="name">
                     </td>
                     <td class="align-middle">
                         <input type="text" value="<?= $look['text'] ?>" name="text">

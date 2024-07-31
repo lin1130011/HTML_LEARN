@@ -4,7 +4,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>ID</th>
+
                     <th>圖片</th>
                     <th>文字</th>
                     <th>顯示</th>
@@ -19,7 +19,7 @@
 
                 foreach ($datas as $key => $data) : ?>
                     <tr>
-                        <td class="align-middle"><?= $data['id'] ?></td>
+
                         <input id="id" type="hidden" name="id" value="<?= $data['id'] ?>">
                         <td>
                             <img src="./images/banner/<?= $data['img'] ?>" alt="" style="width: 100px; height: 100px;">
