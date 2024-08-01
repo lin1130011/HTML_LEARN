@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>location</th>
+                <th id="time0Th">time0</th>
+                <th id="time1Th">time1</th>
+                <th id="time2Th">time2</th>
+            </tr>
+        </thead>
+        <tbody id="mybody">
+
+        </tbody>
+    </table>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./try/a.js"></script>
+    <script>
+        const mybody = $("#mybody");
+        const time0Th = $('#time0Th');
+        const time1Th = $('#time1Th');
+        const time2Th = $('#time2Th');
+        $.get(URL, (res) => {
+            let time0Tilte = res.records.location[1].weatherElement[4].time[0].startTime;
+            let time1Tilte = res.records.location[1].weatherElement[4].time[1].startTime;
+            let time2Tilte = res.records.location[1].weatherElement[4].time[2].startTime;
+            console.log('time0Tilte', res);
+
+            time0Th.text(time0Tilte);
+            time1Th.text(time1Tilte);
+            time2Th.text(time2Tilte);
+            let data = res.records.location;
+            let result = ``
+            $.each(data, (key, value) => {
+                let time0MaxT = value.weatherElement[4].time[0].parameter.parameterName;
+                let time0MinT = value.weatherElement[2].time[0].parameter.parameterName;
+                let time0 = `${time0MaxT} - ${time0MinT} &#8451;`;
+
+                let time1MaxT = value.weatherElement[4].time[1].parameter.parameterName;
+                let time1MinT = value.weatherElement[2].time[1].parameter.parameterName;
+                let time1 = `${time1MaxT} - ${time1MinT} &#8451;`;
+
+                let time2MaxT = value.weatherElement[4].time[2].parameter.parameterName;
+                let time2MinT = value.weatherElement[2].time[2].parameter.parameterName;
+                let time2 = `${time2MaxT} - ${time2MinT} &#8451;`;
+
+                let text0 = value.weatherElement[0].time[0].parameter.parameterName
+                let img0 = value.weatherElement[0].time[0].parameter.parameterValue
+
+                let text1 = value.weatherElement[0].time[1].parameter.parameterName
+                let img1 = value.weatherElement[0].time[1].parameter.parameterValue
+
+                let text2 = value.weatherElement[0].time[2].parameter.parameterName
+                let img2 = value.weatherElement[0].time[2].parameter.parameterValue
+
+
+
+                result = `
+                        <tr>
+                            <td>${key + 1}</td>
+                            <td>${value.locationName}</td>
+                            <td>
+                                ${time0}
+                                <img src="./images/day/${img0}.svg" alt="">${text0}
+                            </td>
+                            <td>
+                                ${time1}
+                                <img src="./images/night/${img1}.svg" alt="">${text1}
+                            </td>
+                            <td>
+                                ${time2}
+                                <img src="./images/day/${img2}.svg" alt="">${text2}
+                            </td>
+                        </tr>`;
+                mybody.append(result);
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>
