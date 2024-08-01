@@ -19,7 +19,7 @@ $Store = new DB('store');
                 ?>
                 <tr>
                     <td>
-                        <img src="./images/banner/<?= $look['img'] ?>" alt="" style="width: 100px; height: 100px;">
+                        <img src="./images/store/<?= $look['img'] ?>" alt="" style="width: 100px; height: 100px;">
 
                     </td>
                     <td class="align-middle">
@@ -32,7 +32,7 @@ $Store = new DB('store');
                         <input type="number" name="total">
                     </td>
                     <td class="align-middle">
-                        <button class="btn btn-primary" type="submit">送出訂單</button>
+                        <button class="btn btn-primary" type="submit">加入購物車</button>
                         <!-- <button class="btn btn-danger" type="submit">刪除</button> -->
                     </td>
                 </tr>
