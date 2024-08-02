@@ -17,7 +17,10 @@ class DB
     function getAll(...$arg)
     {
         $sql = "select * from $this->table";
-
+        if (($arg[0])) {
+            $sql = $sql . $arg[0];
+        }
+        // echo $sql;
         $data = $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }

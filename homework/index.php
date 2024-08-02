@@ -54,7 +54,7 @@ include_once "./api/base.php";
                         <a class="nav-link" href="#shop">商品</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">客戶意見</a>
+                        <a class="nav-link" href="?do=chk_order">查看訂單</a>
                     </li>
                     <?php
                     if (isset($_SESSION['type'])) {
@@ -104,7 +104,7 @@ include_once "./api/base.php";
         # code...
     ?>
         <div class="position-fixed bottom-0 end-0 p-3">
-            <a href="?do=show_order" class="btn btn-lg btn-success">
+            <a href="?do=show_cart" class="btn btn-lg btn-success">
                 <i class="bi bi-cart"></i>
                 <span id="cart" class="badge-notification"><?= $_SESSION['time'] ?></span>
             </a>
