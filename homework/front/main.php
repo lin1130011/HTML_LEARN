@@ -47,7 +47,7 @@ $banner = $Banner->getOne(['sh' => 1]);
     <h1 class="text-center">商品展示區(卡片)</h1>
     <div class="row w-100 m-auto mt-5" id="shop">
         <?php
-        $shop = $Store->q("select * from store where sh = 1");
+        $shop = $Store->q("select * from ck_store where sh = 1");
         foreach ($shop as $key => $value) : ?>
             <div class="col-12 col-lg-4 mt-5 mb-5">
                 <div class="card" style="width:400px">
