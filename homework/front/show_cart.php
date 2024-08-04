@@ -6,28 +6,27 @@ if (empty($_SESSION['cart'])) {
     </div>
 <?php
 } else {
-
 ?>
     <div class="container mt-5">
-        <h1 class=" text-center">購買明細</h1>
+        <h1 class=" text-center">購物車清單</h1>
         <table class="table text-center mt-5">
             <thead>
                 <tr>
                     <th>商品名稱</th>
                     <th>商品單價</th>
                     <th>購買數量</th>
-                    <th>總金額</th>
+                    <th>小計</th>
+                    <th>刪除</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 $data = $_SESSION['cart'];
-                $money = 0;
+                $sum_price = 0;
                 foreach ($data as $key => $value) : ?>
                     <tr>
                         <?php
-                        echo $key;
-                        $money += $value['total']
+                        $sum_price += $value['total_price']
                         ?>
                         <td>
 
@@ -39,12 +38,15 @@ if (empty($_SESSION['cart'])) {
                         </td>
                         <td>
                             <!-- <input type="number" name="count" id="" value=" <?= $value['count'] ?>" placeholder=<?= $value['count'] ?>> -->
-                            <?= $value['count'] ?>
+                            <?= $value['quantity'] ?>
 
                         </td>
                         <td>
 
-                            <?= $value['total'] ?>
+                            <?= $value['total_price'] ?>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" type="button" onclick="del(<?= $key ?>)">取消購買</button>
                         </td>
                     </tr>
                 <?php endforeach ?>
@@ -53,26 +55,26 @@ if (empty($_SESSION['cart'])) {
         <hr>
         <div class="text-center mt-5">
             <h1>
-                總金額為 <?= $money ?> 元
+                總金額為 <?= $sum_price ?> 元
             </h1>
             <button type="button" class="btn btn-lg btn-success mt-5" onclick="buy()">結帳</button>
         </div>
     </div>
 <?php } ?>
 <script>
-    let data = {
+    function del(id) {
+        $.post("./api/cart_del.php", {
+            id
+        }, (res) => {
 
+            location.href = "?do=show_cart"
+        })
     }
 
     function buy() {
-        $.post("./api/order.php", (res) => {
-            if (res) {
-                // alert("成功")
-                console.log(res);
-
-                // location.href = "?do=main#shop"
-            }
-
+        $.post("./api/chk_order.php", () => {
+            alert("訂單已送出")
+            location.href = "?do=main";
         })
     }
 </script>

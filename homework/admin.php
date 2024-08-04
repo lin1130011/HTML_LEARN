@@ -43,7 +43,7 @@ include_once "./api/base.php";
                         <a class="nav-link" href="?do=store">上架商品</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+                        <a class="nav-link" href="?do=order">處理訂單</a>
                     </li>
                     <li class="nav-item ms-auto">
                         <button type="button" class="btn btn-danger" onclick="logout()">登出</button>

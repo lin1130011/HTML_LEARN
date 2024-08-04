@@ -15,7 +15,7 @@
             </thead>
             <tbody>
                 <?php
-                $Store = new DB('store');
+                $Store = new DB('ck_store');
 
                 $datas = $Store->getAll();
 

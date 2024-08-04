@@ -2,20 +2,18 @@
 
 if (!empty($_POST)) {
     $_SESSION['time'] += 1;
-    $name = $_POST['text'];
-    $user = $_SESSION['user'];
+    $id = $_POST['id'];
+    $name = $_POST['name'];
     $price = $_POST['price'];
-    $count = $_POST['total'];
-    $total = $_POST['price'] * $_POST['total'];
-    $date = date("Y-m-d");
+    $quantity = $_POST['quantity'];
+    $total_price = $_POST['price'] * $_POST['quantity'];
 
     $_SESSION['cart'][] = [
-        'user' => $user,
+        'shop_id' => $id,
         'shopname' => $name,
         'price' => $price,
-        'count' => $count,
-        'total' => $total,
-        'buydate' => $date
+        'quantity' => $quantity,
+        'total_price' => $total_price,
     ];
 }
 

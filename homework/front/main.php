@@ -1,5 +1,5 @@
 <?php
-$Banner = new DB('banner');
+$Banner = new DB('ck_banner');
 $banner = $Banner->getOne(['sh' => 1]);
 ?>
 
@@ -11,8 +11,8 @@ $banner = $Banner->getOne(['sh' => 1]);
 <div class="container mt-5">
     <h1 class="text-center">熱門銷售</h1>
     <?php
-    $Store = new DB('store');
-    $store = $Store->q("select * from `store` ORDER BY good DESC LIMIT 3");
+    $Store = new DB('ck_store');
+    $store = $Store->q("select * from `ck_store` ORDER BY good DESC LIMIT 3");
     ?>
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
         <!-- Indicators/dots -->

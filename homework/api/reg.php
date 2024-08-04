@@ -1,6 +1,6 @@
 <?php
 include_once "./base.php";
-$User = new DB('users');
+$User = new DB('ck_users');
 $tmp = $_POST;
 unset($tmp['pwd']);
 if ($User->count($tmp) == 0) {

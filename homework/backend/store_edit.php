@@ -1,5 +1,5 @@
 <?php
-$Store = new DB('store');
+$Store = new DB('ck_store');
 ?>
 <div class="container mt-5">
     <form action="./api/store_edit.php" method="post" enctype="multipart/form-data">

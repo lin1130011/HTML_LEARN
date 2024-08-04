@@ -13,7 +13,7 @@
             </thead>
             <tbody>
                 <?php
-                $Banner = new DB('banner');
+                $Banner = new DB('ck_banner');
 
                 $datas = $Banner->getAll();
 

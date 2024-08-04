@@ -54,7 +54,7 @@ include_once "./api/base.php";
                         <a class="nav-link" href="#shop">商品</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="?do=chk_order">查看訂單</a>
+                        <a class="nav-link" href="?do=order">查看訂單</a>
                     </li>
                     <?php
                     if (isset($_SESSION['type'])) {

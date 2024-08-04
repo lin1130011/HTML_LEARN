@@ -17,8 +17,10 @@ class DB
     function getAll(...$arg)
     {
         $sql = "select * from $this->table";
-        if (($arg[0])) {
-            $sql = $sql . $arg[0];
+        if (isset($arg[0])) {
+            if (($arg[0])) {
+                $sql = $sql . $arg[0];
+            }
         }
         // echo $sql;
         $data = $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
@@ -52,6 +54,7 @@ class DB
         $tmp = $this->a2s($data);
         // $sql = "UPDATE `{$this->table}` SET `id`='[value-1]',`img`='[value-2]',`text`='[value-3]',`sh`='[value-4]' WHERE `id` = '{$id}'";
         $sql = "UPDATE `{$this->table}` SET " . join(" , ", $tmp) . " WHERE `id` = '{$data['id']}'";
+        // echo $sql;
         return $this->pdo->exec($sql);
     }
     function del($data)

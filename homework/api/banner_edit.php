@@ -1,10 +1,10 @@
 <?php
 include_once "./base.php";
-$Banner = new DB('banner');
+$Banner = new DB('ck_banner');
 // dd($_FILES);
 // dd($_POST);
 if ($_POST['sh'] == 1) {
-    $Banner->q("UPDATE `banner` SET `sh` = '0' WHERE `id` != '{$_POST['id']}'");
+    $Banner->q("UPDATE `ck_banner` SET `sh` = '0' WHERE `id` != '{$_POST['id']}'");
 }
 
 

@@ -1,6 +1,6 @@
 <?php
 include_once "./base.php";
-$Store = new DB('store');
+$Store = new DB('ck_store');
 // dd($_FILES);
 // dd($_POST);
 if (!empty($_FILES['img']['tmp_name'])) {

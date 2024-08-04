@@ -1,6 +1,6 @@
 <?php
 include_once "./base.php";
-$User = new DB("users");
+$User = new DB("ck_users");
 
 if ($User->count($_POST)) {
     $type = $User->getOne($_POST);

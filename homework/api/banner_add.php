@@ -1,7 +1,7 @@
 <?php
 include_once "./base.php";
 
-$Banner = new DB('banner');
+$Banner = new DB('ck_banner');
 if (!empty($_FILES['img']['tmp_name'])) {
     move_uploaded_file($_FILES['img']['tmp_name'], "../images/banner/" . $_FILES['img']['name']);
     $_POST['img'] = $_FILES['img']['name'];

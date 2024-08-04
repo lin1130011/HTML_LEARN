@@ -1,5 +1,5 @@
 <?php
-$Banner = new DB('banner');
+$Banner = new DB('ck_banner');
 ?>
 <div class="container">
     <form action="./api/banner_edit.php" method="post" enctype="multipart/form-data">
@@ -29,20 +29,8 @@ $Banner = new DB('banner');
                     </td>
                     <td class="align-middle">
                         <select name="sh" id="">
-                            <?php
-                            if ($look['sh'] == 1) {
-
-                            ?>
-                                <option value="<?= $look['sh'] ?>">顯示</option>
-                                <option value="0">不顯示</option>
-                            <?php
-                            } else {
-                            ?>
-                                <option value="<?= $look['sh'] ?>">不顯示</option>
-                                <option value="1">顯示</option>
-                            <?php
-                            }
-                            ?>
+                            <option value="1" <?= $look['sh'] == 1 ? 'selected' : '' ?>>顯示</option>
+                            <option value="0" <?= $look['sh'] == 0 ? 'selected' : '' ?>>不顯示</option>
                         </select>
                     </td>
                     <td class="align-middle">
