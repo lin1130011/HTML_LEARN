@@ -15,7 +15,11 @@
 
 
 <div class="container position-relative mt-5">
-    <img class="img-fluid" src="./cake/banner.png" alt="">
+    <?php
+    $Banner = new DB('ck_banner');
+    $banner = $Banner->getOne(['sh' => 1]);
+    ?>
+    <img class="img-fluid" src="./cakes/<?= $banner['img'] ?>" alt="">
     <form action="/action_page.php">
         <h2 class="text-center">會員登入</h2>
         <div class="col-12 mb-5 mt-5">
