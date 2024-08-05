@@ -73,7 +73,7 @@ $banner = $Banner->getOne(['sh' => 1]);
                     FOLLOW　US
                 </div>
                 <div>
-                    <button type="button" class=" btn btn-success mt-3">前往</button>
+                    <button type="button" class=" btn btn-success mt-3" onclick="location.href='./joke.html'">前往</button>
                 </div>
             </div>
             <div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
