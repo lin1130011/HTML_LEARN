@@ -1,9 +1,9 @@
-<?php
+﻿<?php
 $Order = new DB('ck_orders');
 $data = $Order->getAll(" where `order_status` = 0");
 ?>
 <div class="container">
-    <h1 class="text-center mt-5 mb-5">訂單</h1>
+    <h1 class="text-center mt-5 mb-5">處理訂單</h1>
     <table class="table text-center">
         <thead>
             <tr>

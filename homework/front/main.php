@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $Banner = new DB('ck_banner');
 $banner = $Banner->getOne(['sh' => 1]);
 ?>
@@ -25,11 +25,7 @@ $banner = $Banner->getOne(['sh' => 1]);
         <div class="carousel-inner">
             <?php foreach ($store as $key => $value) : ?>
                 <div class="carousel-item <?= $key === 0 ? 'active' : '' ?>">
-                    <img class="carouse" src="./images/store/<?= $value['img'] ?>" alt="<?= $value['text'] ?>" class="d-block" style="width:100%">
-                    <div class="carousel-caption">
-                        <h3 class=" text-body"><?= $value['name'] ?></h3>
-                        <p class=" text-white"><?= $value['text'] ?></p>
-                    </div>
+                    <img class="carouse" src="./images/store/<?= $value['img'] ?>" alt="<?= $value['text'] ?>" class="d-block" style="width:100%">                    
                 </div>
             <?php endforeach; ?>
         </div>
@@ -73,15 +69,15 @@ $banner = $Banner->getOne(['sh' => 1]);
                     FOLLOW　US
                 </div>
                 <div>
-                    <button type="button" class=" btn btn-success mt-3" onclick="location.href='./joke.html'">前往</button>
+                    <button type="button" class=" btn btn-success mt-3" onclick="location.href='./joke.php'">前往</button>
                 </div>
             </div>
             <div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
                 <div class="t text-white">公司資訊</div>
-                <div class="t text-white">✦供應商資訊：廖憨憨股份有限公司</div>
-                <div class="t text-white">✦供應商地址：新北市三重區重新路</div>
-                <div class="t text-white">✦供應商電話：02-35012035 (一)~(五) 10:00-18:00</div>
-                <div class="t text-white">✦食品業者登錄者字號：F-129146530-00001-4</div>
+                <div class="t text-white">✦供應商資訊：XXX股份有限公司</div>
+                <div class="t text-white">✦供應商地址：新北市XX區XX路</div>
+                <div class="t text-white">✦供應商電話：02-XXXXXXXX (一)~(五) 10:00-18:00</div>
+                <div class="t text-white">✦食品業者登錄者字號：F-XXXXXXXXX-00001-4</div>
             </div>
         </div>
         <hr>
@@ -90,7 +86,6 @@ $banner = $Banner->getOne(['sh' => 1]);
                 <div class="t text-white">
                     網頁提供：
                     繁體中文
-                    English
                 </div>
 
             </div>
@@ -98,8 +93,6 @@ $banner = $Banner->getOne(['sh' => 1]);
                 <div class="t text-white">
                     條款及條件
                     隱私權政策
-                    技術支援：
-                    Oddle.me
                 </div>
             </div>
         </div>

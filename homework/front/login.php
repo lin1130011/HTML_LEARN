@@ -1,4 +1,4 @@
-<style>
+﻿<style>
     form {
         position: absolute;
         top: 50%;
@@ -19,12 +19,12 @@
     $Banner = new DB('ck_banner');
     $banner = $Banner->getOne(['sh' => 1]);
     ?>
-    <img class="img-fluid" src="./cakes/<?= $banner['img'] ?>" alt="">
+    <img class="img-fluid" src="./images/banner/<?= $banner['img'] ?>" alt="">
     <form action="/action_page.php">
         <h2 class="text-center">會員登入</h2>
         <div class="col-12 mb-5 mt-5">
             <label for="acc">帳號:</label>
-            <input type="text" class="form-control" id="acc" placeholder="Enter email" name="acc">
+            <input type="text" class="form-control" id="acc" placeholder="Enter acc" name="acc">
         </div>
         <div class="col-12 mb-5 mt-5">
             <label for="pwd">密碼:</label>
